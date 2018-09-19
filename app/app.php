@@ -7,9 +7,9 @@ use WP_Plugin_Boilerplate\Traits\Singleton as SingletonTrait;
 
 
 /**
- * Class Controller
+ * Class App
  */
-class Controller implements Singleton {
+class App implements Singleton {
 
 	use SingletonTrait;
 

@@ -32,6 +32,6 @@ define( 'DDDDD_PLUGIN_URL', plugins_url('', __FILE__));
 
 require_once __DIR__ . '/app/interfaces/interface-singleton.php';
 require_once __DIR__ . '/app/traits/trait-singleton.php';
-require_once __DIR__ . '/app/class-form-customizer.php';
+require_once __DIR__ . '/app/app.php';
 
-\WP_Plugin_Boilerplate\Controller::instance()->init();
+\WP_Plugin_Boilerplate\App::instance()->init();
