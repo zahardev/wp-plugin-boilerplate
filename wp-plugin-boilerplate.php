@@ -2,7 +2,7 @@
 /*
  Plugin Name: {WP_Plugin_Boilerplate}
  Author: Author Name
- Author URI:  https://github.com/zahardoc
+ Author URI:  https://github.com/
  Description: This plugin does something amazing
  License:     GPL2
 
@@ -25,13 +25,12 @@ if ( ! function_exists( 'add_action' ) ) {
     exit;
 }
 
-//change DDDDD to your unique plugin prefix
+//todo: change DDDDD to your unique plugin prefix in all the plugin files
+//todo: change {WP_Plugin_Boilerplate} to your plugin name in all the plugin files
 define( 'DDDDD_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'DDDDD_PLUGIN_BASENAME', plugin_basename(__FILE__));
 define( 'DDDDD_PLUGIN_URL', plugins_url('', __FILE__));
 
-require_once __DIR__ . '/app/interfaces/interface-singleton.php';
-require_once __DIR__ . '/app/traits/trait-singleton.php';
-require_once __DIR__ . '/app/app.php';
+require_once 'wp-autoloader.php';
 
 \WP_Plugin_Boilerplate\App::instance()->init();
