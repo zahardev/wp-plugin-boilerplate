@@ -1,6 +1,6 @@
 <?php
 
-namespace WP_Plugin_Boilerplate\Traits;
+namespace __WP_Plugin_Boilerplate__\Traits;
 
 
 /**
@@ -17,6 +17,9 @@ trait Singleton {
 	private function __construct() {
 	}
 
+    /**
+     * @return $this
+     * */
 	public static function instance() {
 		if ( empty( static::$instance ) ) {
 			static::$instance = new static;

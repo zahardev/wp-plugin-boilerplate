@@ -1,6 +1,6 @@
 <?php
 
-namespace WP_Plugin_Boilerplate\Interfaces;
+namespace __WP_Plugin_Boilerplate__\Interfaces;
 
 interface Singleton {
 	public function init();
