@@ -20,66 +20,37 @@ use WP_Plugin_Boilerplate\Services\Renderer;
  */
 abstract class Abstract_Shortcode implements Singleton, Initiable {
 
-	/**
-	 * Renderer object
-	 *
-	 * @var Renderer
-	 * */
-	protected $renderer;
+    protected function __construct() {
+    }
 
-	/**
-	 * DB_Butler object
-	 *
-	 * @var DB_Butler
-	 * */
-	protected $db_butler;
+    /**
+     * Init function
+     */
+    public function init() {
+        $this->init_shortcode();
+        $this->init_ajax();
+    }
 
-	/**
-	 * Config array
-	 *
-	 * @var array
-	 */
-	protected $config;
+    /**
+     * Inits ajax jobs
+     */
+    protected function init_ajax() {
+    }
 
-	/**
-	 * Shortcode string
-	 *
-	 * @var string
-	 * */
-	protected $shortcode;
+    /**
+     * Inits the shortcode
+     * */
+    protected function init_shortcode() {
+        add_shortcode(
+            $this->shortcode,
+            function () {
+                return $this->render_shortcode();
+            }
+        );
+    }
 
-	/**
-	 * Init function
-	 */
-	public function init() {
-		$this->renderer  = Renderer::instance();
-		$this->db_butler = DB_Butler::instance();
-		$this->config    = Configurator::instance()->config();
-
-		$this->init_shortcode();
-		$this->init_ajax();
-	}
-
-	/**
-	 * Inits ajax jobs
-	 */
-	protected function init_ajax() {
-	}
-
-	/**
-	 * Inits the shortcode
-	 * */
-	protected function init_shortcode() {
-		add_shortcode(
-			$this->shortcode,
-			function () {
-				return $this->render_shortcode();
-			}
-		);
-	}
-
-	/**
-	 * Renders the shortcode
-	 */
-	abstract protected function render_shortcode();
+    /**
+     * Renders the shortcode
+     */
+    abstract protected function render_shortcode();
 }

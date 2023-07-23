@@ -10,6 +10,7 @@ namespace WP_Plugin_Boilerplate\Controllers;
 use WP_Plugin_Boilerplate\Interfaces\Initiable;
 use WP_Plugin_Boilerplate\Interfaces\Singleton;
 use WP_Plugin_Boilerplate\Services\DB_Butler;
+use WP_Plugin_Boilerplate\Services\Renderer;
 use WP_Plugin_Boilerplate\Traits\Singleton as Singleton_Trait;
 
 
@@ -25,6 +26,13 @@ class Plugin_Actions implements Singleton, Initiable {
      */
     protected $db_butler;
 
+    /**
+     * @param DB_Butler $db_butler
+     */
+    public function __construct( $db_butler ){
+        $this->db_butler = $db_butler;
+    }
+
 	/**
 	 * Init function
 	 */
@@ -32,7 +40,6 @@ class Plugin_Actions implements Singleton, Initiable {
 		if ( ! is_admin() ) {
 			return;
 		}
-        $this->db_butler = DB_Butler::instance();
 
 		register_activation_hook( WPPLGNBLRPLT_PLUGIN_FILE, array( $this, 'activate' ) );
 		register_deactivation_hook( WPPLGNBLRPLT_PLUGIN_FILE, array( $this, 'deactivate' ) );
@@ -42,8 +49,8 @@ class Plugin_Actions implements Singleton, Initiable {
 	 * Creates custom table on plugin activation
 	 */
 	public function activate() {
-		$res1 = $this->db_butler->create_example_table();
-        $res2 = $this->db_butler->insert_example_data();
+		$this->db_butler->create_example_table();
+        $this->db_butler->insert_example_data();
 	}
 
     /**

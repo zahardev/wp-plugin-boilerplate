@@ -64,7 +64,7 @@
     font-weight: bold;
     font-size: 16px;
     padding-bottom: 8px;
-    border-bottom: 1px solid $clr_middle_grey;
+    border-bottom: 1px solid $clr_grey_200;
   }
 
   &__list-item {
@@ -75,7 +75,7 @@
     position: relative;
 
     &.active {
-      background: $clr_light_grey;
+      background: $clr_grey_100;
     }
 
     &:hover {
@@ -85,23 +85,23 @@
 
   &__pagination {
     padding-top: 30px;
-    border-top: 1px solid $clr_middle_grey;
+    border-top: 1px solid $clr_grey_200;
 
     > button:not(#_):not(#_):not(#_) {
       padding: 8px 16px;
       text-decoration: none;
-      border: 1px solid $clr_grey;
+      border: 1px solid $clr_grey_300;
       background: none;
-      color: $clr_dark_grey;
+      color: $clr_grey_400;
       outline: none;
 
       &:hover:not(.disabled) {
-        background-color: $clr_light_grey;
+        background-color: $clr_grey_100;
         transition: .5s;
       }
 
       &.disabled {
-        color: $clr_grey;
+        color: $clr_grey_300;
       }
 
       &:first-child {
@@ -126,7 +126,7 @@
 
   &__details {
 
-    border-bottom: 1px solid $clr_middle_grey;
+    border-bottom: 1px solid $clr_grey_200;
 
     &.error {
       color: $clr_red;

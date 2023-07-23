@@ -14,29 +14,29 @@ namespace WP_Plugin_Boilerplate\Traits;
  */
 trait Singleton {
 
-	/**
-	 * Class instance.
-	 *
-	 * @var self $instance
-	 * */
-	private static $instance;
+    /**
+     * Class instance.
+     *
+     * @var self $instance
+     * */
+    private static $instance;
 
-	/**
-	 * Protect instance constructor.
-	 */
-	private function __construct() {
-	}
+    /**
+     * Protect instance constructor.
+     */
+    private function __construct() {
+    }
 
-	/**
-	 * Returns the class instance.
-	 *
-	 * @return $this
-	 * */
-	public static function instance() {
-		if ( empty( static::$instance ) ) {
-			static::$instance = new static();
-		}
+    /**
+     * Returns the class instance.
+     *
+     * @return $this
+     * */
+    public static function instance( ...$params ) {
+        if ( empty( static::$instance ) ) {
+            static::$instance = new static( ...$params );
+        }
 
-		return static::$instance;
-	}
+        return static::$instance;
+    }
 }

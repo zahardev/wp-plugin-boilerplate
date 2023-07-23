@@ -33,9 +33,6 @@ class Frontend implements Singleton, Initiable {
 	 * Init function
 	 */
 	public function init() {
-		if ( is_admin() ) {
-			return;
-		}
 		$this->version = $this->is_debug_mode() ? time() : WPPLGNBLRPLT_PLUGIN_VERSION;
 
 		$this->enqueue_styles();
