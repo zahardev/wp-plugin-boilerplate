@@ -1,0 +1,141 @@
+.example-list {
+  &__msg {
+    &.error {
+      color: $clr_red;
+    }
+  }
+
+  ul, li {
+    list-style-type: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h2:not(#_):not(#_) {
+    font-size: 36px;
+  }
+
+  h3:not(#_):not(#_) {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0 5px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  &__items-list {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    div {
+      width: 19%;
+      padding: 5px;
+
+      &:nth-of-type(3) {
+        width: 30%;
+      }
+
+      &:nth-of-type(4) {
+        width: 30%;
+      }
+
+      text-align: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__list-header {
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $clr_middle_grey;
+  }
+
+  &__list-item {
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+
+    &.active {
+      background: $clr_light_grey;
+    }
+
+    &:hover {
+      background: $clr_light_green;
+    }
+  }
+
+  &__pagination {
+    padding-top: 30px;
+    border-top: 1px solid $clr_middle_grey;
+
+    > button:not(#_):not(#_):not(#_) {
+      padding: 8px 16px;
+      text-decoration: none;
+      border: 1px solid $clr_grey;
+      background: none;
+      color: $clr_dark_grey;
+      outline: none;
+
+      &:hover:not(.disabled) {
+        background-color: $clr_light_grey;
+        transition: .5s;
+      }
+
+      &.disabled {
+        color: $clr_grey;
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+
+    > span {
+      padding: 16px;
+    }
+  }
+
+  &__details-container {
+    margin-top: 70px;
+  }
+
+  &__details {
+
+    border-bottom: 1px solid $clr_middle_grey;
+
+    &.error {
+      color: $clr_red;
+    }
+
+    > div {
+      margin: 10px 0;
+    }
+  }
+}
+
+

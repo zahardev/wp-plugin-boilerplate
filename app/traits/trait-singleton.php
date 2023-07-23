@@ -1,28 +1,40 @@
 <?php
+/**
+ * Trait for using singleton functionality
+ *
+ * @package WP_Plugin_Boilerplate
+ * */
 
-namespace __WP_Plugin_Boilerplate__\Traits;
-
+namespace WP_Plugin_Boilerplate\Traits;
 
 /**
  * Trait Singleton
- * @package Importer_From_Maxsite
+ *
+ * @since 1.0.0
  */
 trait Singleton {
 
+	/**
+	 * Class instance.
+	 *
+	 * @var self $instance
+	 * */
 	private static $instance;
 
 	/**
-	 * API constructor.
+	 * Protect instance constructor.
 	 */
 	private function __construct() {
 	}
 
-    /**
-     * @return $this
-     * */
+	/**
+	 * Returns the class instance.
+	 *
+	 * @return $this
+	 * */
 	public static function instance() {
 		if ( empty( static::$instance ) ) {
-			static::$instance = new static;
+			static::$instance = new static();
 		}
 
 		return static::$instance;

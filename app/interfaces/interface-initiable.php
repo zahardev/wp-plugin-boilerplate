@@ -1,15 +1,16 @@
 <?php
 /**
- * Singleton interface
+ * Initiable interface
  *
  * @package WP_Plugin_Boilerplate
  * */
 
 namespace WP_Plugin_Boilerplate\Interfaces;
 
-interface Singleton {
+interface Initiable {
+
 	/**
-	 * Function instance
+	 * Function init
 	 * */
-	public static function instance();
+	public function init();
 }

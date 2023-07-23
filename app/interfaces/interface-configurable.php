@@ -1,15 +1,16 @@
 <?php
 /**
- * Singleton interface
+ * Configurable interface
  *
  * @package WP_Plugin_Boilerplate
  * */
 
 namespace WP_Plugin_Boilerplate\Interfaces;
 
-interface Singleton {
+interface Configurable {
+
 	/**
-	 * Function instance
+	 * Function config
 	 * */
-	public static function instance();
+	public function config();
 }

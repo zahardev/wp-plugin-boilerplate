@@ -1,0 +1,131 @@
+.example input, .example textarea, .example label, .example button, .example h2, .example p, .example div, .example a, .example span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: #555;
+}
+.example h2 {
+  font-size: 36px;
+  margin: 10px 0 30px;
+}
+.example .loader {
+  position: relative;
+}
+.example .loader:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  background-image: url("../img/loader.svg");
+}
+
+.example-list__msg.error {
+  color: #f33c3c;
+}
+.example-list ul, .example-list li {
+  list-style-type: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+.example-list ul {
+  display: flex;
+  flex-direction: column;
+}
+.example-list h2:not(#_):not(#_) {
+  font-size: 36px;
+}
+.example-list h3:not(#_):not(#_) {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0 5px;
+}
+.example-list p {
+  font-size: 16px;
+}
+.example-list__items-list {
+  display: flex;
+  flex-direction: column;
+}
+.example-list__items-list li {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+.example-list__items-list div {
+  width: 19%;
+  padding: 5px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.example-list__items-list div:nth-of-type(3) {
+  width: 30%;
+}
+.example-list__items-list div:nth-of-type(4) {
+  width: 30%;
+}
+.example-list__list-header {
+  font-weight: bold;
+  font-size: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d2d2d2;
+}
+.example-list__list-item {
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.example-list__list-item.active {
+  background: #efefef;
+}
+.example-list__list-item:hover {
+  background: #e8f7f2;
+}
+.example-list__pagination {
+  padding-top: 30px;
+  border-top: 1px solid #d2d2d2;
+}
+.example-list__pagination > button:not(#_):not(#_):not(#_) {
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #aeaeae;
+  background: none;
+  color: #555;
+  outline: none;
+}
+.example-list__pagination > button:not(#_):not(#_):not(#_):hover:not(.disabled) {
+  background-color: #efefef;
+  transition: 0.5s;
+}
+.example-list__pagination > button:not(#_):not(#_):not(#_).disabled {
+  color: #aeaeae;
+}
+.example-list__pagination > button:not(#_):not(#_):not(#_):first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.example-list__pagination > button:not(#_):not(#_):not(#_):last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.example-list__pagination > span {
+  padding: 16px;
+}
+.example-list__details-container {
+  margin-top: 70px;
+}
+.example-list__details {
+  border-bottom: 1px solid #d2d2d2;
+}
+.example-list__details.error {
+  color: #f33c3c;
+}
+.example-list__details > div {
+  margin: 10px 0;
+}
